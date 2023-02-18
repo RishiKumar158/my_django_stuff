@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <title>Access Records</title>
+</head>
+<body>
+    <h1>Here are the Access Records</h1>
+    {% if records %}
+    <table>
+        <thead>
+            <th>Webpage</th>
+            <th>Date</th>
+        </thead>
+        {% for record in records %}
+        <tr>
+            <td>{{ record.webpage }}</td>
+            <td>{{ record.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No Records Found!</p>
+    {% endif %}
+</body>
+</html>
